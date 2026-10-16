@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111111">
+
+    <title>Carpetas Ferre | Ferretería Arias</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- ENCABEZADO -->
+
+        <header class="header">
+            <div class="marca">
+                <span class="marca-fas">FAS</span>
+                <span class="marca-subtitulo">FERRETERÍA ARIAS</span>
+            </div>
+
+            <h1>Carpetas Ferre</h1>
+            <p>Consulta de precios</p>
+        </header>
+
+        <!-- PANTALLA DE CARPETAS -->
+
+        <section id="pantallaInicio">
+
+            <h2>Mis carpetas</h2>
+
+            <div class="carpetas">
+
+                <button
+                    type="button"
+                    class="carpeta"
+                    data-carpeta="pvc"
+                >
+                    <span class="carpeta-icono">📁</span>
+
+                    <span class="carpeta-info">
+                        <strong>PVC</strong>
+                        <small>Tubos, conexiones y accesorios</small>
+                    </span>
+
+                    <span class="flecha">›</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="carpeta"
+                    data-carpeta="varios"
+                >
+                    <span class="carpeta-icono">📁</span>
+
+                    <span class="carpeta-info">
+                        <strong>Varios de tienda</strong>
+                        <small>Productos generales</small>
+                    </span>
+
+                    <span class="flecha">›</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PANTALLA DE PRODUCTOS -->
+
+        <section id="pantallaProductos" class="oculto">
+
+            <button
+                type="button"
+                id="volverBtn"
+                class="volver-btn"
+            >
+                ← Mis carpetas
+            </button>
+
+            <div class="seccion-titulo">
+                <div>
+                    <h2 id="tituloCarpeta">PVC</h2>
+                    <p id="contadorProductos">0 productos</p>
+                </div>
+            </div>
+
+            <div class="herramientas">
+
+                <input
+                    type="search"
+                    id="buscador"
+                    placeholder="Buscar producto..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="agregarBtn"
+                    class="agregar-btn"
+                >
+                    + Agregar producto
+                </button>
+
+            </div>
+
+            <div id="listaProductos" class="lista-productos"></div>
+
+        </section>
+
+    </main>
+
+    <!-- VENTANA AGREGAR / EDITAR -->
+
+    <div id="modal" class="modal oculto">
+
+        <div class="modal-contenido">
+
+            <h2 id="modalTitulo">Agregar producto</h2>
+
+            <form id="formulario">
+
+                <label for="nombreInput">
+                    Nombre del producto
+                </label>
+
+                <input
+                    id="nombreInput"
+                    type="text"
+                    maxlength="250"
+                    placeholder="Ej. Codo CPVC 1/2 x 90"
+                    required
+                >
+
+                <label for="precioInput">
+                    Precio
+                </label>
+
+                <input
+                    id="precioInput"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="Ej. 15.00"
+                    required
+                >
+
+                <div class="modal-acciones">
+
+                    <button
+                        type="button"
+                        id="cancelarBtn"
+                        class="cancelar-btn"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="guardarBtn"
+                        class="guardar-btn"
+                    >
+                        Guardar
+                    </button>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="eliminarBtn"
+                    class="eliminar-btn oculto"
+                >
+                    Eliminar producto
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

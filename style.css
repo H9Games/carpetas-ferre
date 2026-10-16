@@ -1,0 +1,446 @@
+/* ==========================================
+   CARPETAS FERRE - FERRETERÍA ARIAS
+========================================== */
+
+:root {
+    --negro: #111111;
+    --amarillo: #ffcc24;
+    --fondo: #f5f5f3;
+    --blanco: #ffffff;
+    --texto: #171717;
+    --gris: #777777;
+    --borde: #e7e7e7;
+    --rojo: #c52b2b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.app {
+    width: min(100% - 32px, 900px);
+    margin: 0 auto;
+    padding: 28px 0 70px;
+}
+
+/* ENCABEZADO */
+
+.header {
+    background: var(--negro);
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-bottom: 34px;
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.marca-fas {
+    color: var(--amarillo);
+    font-size: 45px;
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -3px;
+}
+
+.marca-subtitulo {
+    color: #eeeeee;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-top: 5px;
+}
+
+.header h1 {
+    font-size: clamp(27px, 5vw, 39px);
+    font-weight: 850;
+    letter-spacing: -1.4px;
+}
+
+.header > p {
+    color: #b8b8b8;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* TÍTULOS */
+
+#pantallaInicio h2,
+.seccion-titulo h2 {
+    font-size: 25px;
+    letter-spacing: -.7px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+/* CARPETAS */
+
+.carpetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.carpeta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 135px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 23px;
+    text-align: left;
+    color: var(--texto);
+    transition: border-color .2s, transform .2s;
+}
+
+.carpeta:hover {
+    border-color: var(--amarillo);
+    transform: translateY(-2px);
+}
+
+.carpeta:active {
+    transform: scale(.98);
+}
+
+.carpeta-icono {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #fff5ce;
+    font-size: 30px;
+}
+
+.carpeta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
+}
+
+.carpeta-info strong {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.carpeta-info small {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.4;
+}
+
+.flecha {
+    color: #999;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/* PANTALLA DE PRODUCTOS */
+
+.volver-btn {
+    border: 0;
+    background: transparent;
+    color: var(--texto);
+    font-weight: 700;
+    padding: 10px 0;
+    margin-bottom: 22px;
+}
+
+.seccion-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.seccion-titulo h2 {
+    margin-bottom: 5px;
+}
+
+#contadorProductos {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+/* BUSCADOR Y BOTÓN */
+
+.herramientas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+#buscador {
+    flex: 1;
+    min-width: 0;
+    height: 52px;
+    padding: 0 17px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background: white;
+    color: var(--texto);
+    outline: none;
+    font-size: 16px;
+}
+
+#buscador:focus {
+    border-color: #d9a800;
+    box-shadow: 0 0 0 3px #ffcc2428;
+}
+
+.agregar-btn {
+    min-height: 52px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 14px;
+    background: var(--negro);
+    color: white;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.agregar-btn:hover {
+    background: #333;
+}
+
+/* LISTA DE PRODUCTOS */
+
+.lista-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+}
+
+.producto-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.producto-nombre {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.producto-precio {
+    display: block;
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 850;
+    color: #151515;
+}
+
+.editar-btn {
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 11px;
+    padding: 11px 15px;
+    background: #fff1b9;
+    color: #654c00;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.editar-btn:hover {
+    background: #ffe48a;
+}
+
+.lista-vacia {
+    padding: 45px 20px;
+    background: white;
+    border: 1px dashed #d6d6d6;
+    border-radius: 16px;
+    color: var(--gris);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(0, 0, 0, .65);
+}
+
+.modal-contenido {
+    width: min(100%, 440px);
+    max-height: 90dvh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 20px 70px #0003;
+}
+
+.modal-contenido h2 {
+    font-size: 23px;
+    margin-bottom: 24px;
+    letter-spacing: -.5px;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario label {
+    font-size: 13px;
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+#formulario input {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    margin-bottom: 21px;
+    border: 1px solid #dedede;
+    border-radius: 12px;
+    background: white;
+    color: var(--texto);
+    outline: none;
+    font-size: 16px;
+}
+
+#formulario input:focus {
+    border-color: #d9a800;
+}
+
+.modal-acciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.modal-acciones button {
+    min-height: 49px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.cancelar-btn {
+    border: 1px solid var(--borde);
+    background: #f5f5f5;
+    color: var(--texto);
+}
+
+.guardar-btn {
+    border: 0;
+    background: var(--amarillo);
+    color: #111;
+}
+
+.eliminar-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    border: 1px solid #ffd6d6;
+    border-radius: 12px;
+    background: #fff0f0;
+    color: var(--rojo);
+    font-weight: 750;
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    .app {
+        width: min(100% - 24px, 900px);
+        padding-top: 12px;
+    }
+
+    .header {
+        padding: 25px 22px;
+        border-radius: 20px;
+        margin-bottom: 28px;
+    }
+
+    .marca {
+        margin-bottom: 25px;
+    }
+
+    .carpetas {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .carpeta {
+        min-height: 112px;
+        padding: 18px;
+    }
+
+    .herramientas {
+        flex-direction: column;
+    }
+
+    .agregar-btn {
+        width: 100%;
+    }
+
+    .producto {
+        padding: 15px;
+    }
+
+    .modal-contenido {
+        padding: 22px;
+    }
+}
